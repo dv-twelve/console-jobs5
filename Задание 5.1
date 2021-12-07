@@ -1,0 +1,28 @@
+using System;
+namespace Csh_console_tasks
+{
+    class program
+    {
+        static double F(double x)
+        {
+            
+            return Math.Exp(Math.Pow((x - 1), 2) / x);
+        }
+        static void Main(string[] args)
+        {
+            double a, b, h;
+            Console.Write("x[a,b] a=: ");
+            a = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
+            Console.Write("x[{0},b] b=: ", a);
+            b = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
+            Console.Write("шаг h для x[{0},{1}] : ", a, b);
+            h = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
+            Console.Write("шаг {0} для x[{1},{2}] : ", h, a, b);
+
+            for (double i = a; i <= b; i += h)
+            {
+                Console.WriteLine(F(i));
+            }
+        }
+    }
+}
